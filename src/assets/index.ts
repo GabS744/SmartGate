@@ -1,5 +1,5 @@
-import citi from './citi.svg';
+import smartGateLogo from './smartGateLogo.svg';
 
 export {
-  citi,
+  smartGateLogo,
 };

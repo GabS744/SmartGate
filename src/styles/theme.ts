@@ -10,5 +10,10 @@ export default {
     regular: 'Barlow_400Regular',
     medium: 'Barlow_500Medium',
     semiBold: 'Barlow_600SemiBold',
+    
+    families: {
+      openSans: 'Open Sans, system-ui, sans-serif',
+      redHat: 'Red Hat Display, system-ui, sans-serif',
+    },
   },
 };

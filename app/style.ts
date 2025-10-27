@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
-import { citi } from "@assets";
+import { smartGateLogo } from "@assets";
 
-export const CitiLogo = styled(citi)``;
+export const SmartGateLogo = styled(smartGateLogo)``;
 
 export const Container = styled.View`
   display: flex;
