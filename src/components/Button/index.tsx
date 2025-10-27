@@ -109,6 +109,7 @@ export function StylizedButton({
           container: styles.mediumContainer,
           text: styles.mediumText,
           iconSize: 18,
+          width: '100%',
         };
       
       case 'long large':
@@ -116,6 +117,7 @@ export function StylizedButton({
           container: styles.largeContainer,
           text: styles.largeText,
           iconSize: 22,
+          width: '100%',
         };
 
       default:
@@ -123,6 +125,7 @@ export function StylizedButton({
           container: styles.mediumContainer,
           text: styles.mediumText,
           iconSize: 18,
+          width: '100%',
         };
     }
   };
@@ -203,6 +206,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    width: '100%'
   },
   content: {
     flexDirection: 'row',

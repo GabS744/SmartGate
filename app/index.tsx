@@ -14,7 +14,6 @@ const App: React.FC = () => (
     <StylizedButton
       rightIcon='edit'
       size='long medium'
-      width={312}
     >
     </StylizedButton>
   </div>
