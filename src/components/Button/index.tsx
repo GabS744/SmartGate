@@ -99,25 +99,23 @@ export function StylizedButton({
         };
       case 'long small':
         return {
-          container: styles.smallContainer,
+          container: styles.longSmallContainer,
           text: styles.smallText,
           iconSize: 16,
         };
       
       case 'long medium':
         return {
-          container: styles.mediumContainer,
+          container: styles.longMediumContainer,
           text: styles.mediumText,
           iconSize: 18,
-          width: '100%',
         };
       
       case 'long large':
         return {
-          container: styles.largeContainer,
+          container: styles.longLargeContainer,
           text: styles.largeText,
           iconSize: 22,
-          width: '100%',
         };
 
       default:
@@ -125,7 +123,6 @@ export function StylizedButton({
           container: styles.mediumContainer,
           text: styles.mediumText,
           iconSize: 18,
-          width: '100%',
         };
     }
   };
@@ -206,7 +203,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    width: '100%'
   },
   content: {
     flexDirection: 'row',
