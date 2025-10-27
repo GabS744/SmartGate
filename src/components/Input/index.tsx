@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// Example usage:
+// Example:
 /*
 import { StylizedInput } from './StylizedInput';
 import { Ionicons } from '@expo/vector-icons';
