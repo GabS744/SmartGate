@@ -4,6 +4,7 @@ export default {
     white: '#FFFFFF',
     black: '#000000',
     background: '#CBD0F2',
+    mediumBlue: '#0053AA',
   },
   fonts: {
     light: 'Barlow_300Light',

@@ -1,36 +1,34 @@
 import React from 'react';
-import { SmartGateLogo } from '../src/assets';
+import { Top } from '../src/assets';
 import StylizedButton from '../src/components/Button';
+import {StylizedInput} from '../src/components/Input';
 import styled from 'styled-components/native';
-import { useRouter , Link } from 'expo-router';
 
-export default function InitialPage(): JSX.Element {
-  const router = useRouter();
-  const handleLogin = () => {
-    router.push('/login'); 
-  };
-
+export default function LoginPage(): JSX.Element {
   return (
     <Container>
-      <Header>
-        <WelcomeText>Bem vindo(a) ao</WelcomeText>
-        <TitleText>Smart Gate</TitleText>
-      </Header>
       <StyledLogo />
+      <Header>
+        <LoginText>Login</LoginText>
+      </Header>
+      <Content>
+        <StylizedInput
+          label='E-mail'/>
+        <StylizedInput
+         label='Senha'/>
+      </Content>
       <Footer>
+        <ForgotPassword>Esqueceu a senha?</ForgotPassword>
         <StyledButton
           text="Entrar"
           variant="primary"
-          onPress={handleLogin}
-          underline={true}
+          onPress={() => console.log('Entrar clicado')}
         />
-        <RegisterBox>
-          <RegisterBasic>Não tem cadastro?</RegisterBasic>
-
-          <Link href="/register">
-            <RegisterLink> Clique aqui</RegisterLink>
-          </Link>
-        </RegisterBox>
+        <StyledButton
+          text="Entrar"
+          variant="primary"
+          onPress={() => console.log('Entrar clicado')}
+        />
       </Footer>
     </Container>
   );
@@ -48,13 +46,13 @@ const Header = styled.View`
   align-items: center;
 `;
 
-const WelcomeText = styled.Text`
+const LoginText = styled.Text`
   color: ${(props) => props.theme.colors.darkBlue};
   font-size: 24px;
   font-family: ${(props) => props.theme.fonts.medium}; 
 `;
 
-const TitleText = styled.Text`
+const ForgotPassword = styled.Text`
   color: ${(props) => props.theme.colors.darkBlue};
   font-size: 40px;
   margin-bottom: 16px;
@@ -62,9 +60,8 @@ const TitleText = styled.Text`
   font-family: ${(props) => props.theme.fonts.medium}; 
 `;
 
-const StyledLogo = styled(SmartGateLogo)`
-  width: 100%;
-  max-width: 400px; 
+const StyledLogo = styled(Top)`
+  width: 100%; 
   height: undefined; 
   aspect-ratio: 0.738; 
   align-self: center; 
@@ -75,10 +72,16 @@ const Footer = styled.View`
   align-items: center;
 `;
 
+const Content = styled.View`
+  width: 100%;
+  align-items: center;
+`;
+
 const StyledButton = styled(StylizedButton)`
   width: 300px; 
   height: 52px;
-  border-radius: 8px;
+  border-radius: 4px;
+  color: ${(props) => props.theme.colors.mediumBlue};
 `;
 
 const RegisterBox = styled.View`
