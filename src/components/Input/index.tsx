@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 14,
+    borderWidth: 0,
     color: theme.colors.black,
     fontFamily: (theme.fonts.families.redHat as string) || undefined,
     paddingVertical: 12,

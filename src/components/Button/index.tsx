@@ -13,7 +13,7 @@ import {
 import theme from '../../styles/theme';
 
 type ButtonSize = 'small' | 'medium' | 'large' | 'long small' | 'long medium' | 'long large';
-type ButtonVariant = 'primary' | 'secondary';
+type ButtonVariant = 'primary' | 'secondary'| 'third';
 type IconName = 'arrow-right' | 'check' | 'plus' | 'trash' | 'edit' | 'save' | 'close';
 
 interface StylizedButtonProps {
@@ -76,7 +76,7 @@ export default function StylizedButton({
       };
       
       const IconComponent = iconMap[icon as IconName];
-      const finalIconColor = iconColor || (variant === 'primary' ? '#FFFFFF' : '#283B7D');
+      const finalIconColor = iconColor || (variant === 'secondary' ? '#131E46' : '#FFFFFF');
       const finalIconSize = iconSize || defaultSize;
       
       return <IconComponent size={finalIconSize} color={finalIconColor} />;
@@ -130,7 +130,7 @@ export default function StylizedButton({
   };
 
   const sizeStyles = getSizeStyles();
-  const finalIconColor = iconColor || (variant === 'primary' ? '#FFFFFF' : '#283B7D');
+  const finalIconColor = iconColor || (variant === 'secondary' ? '#131E46' : '#FFFFFF');
   
   // Determine if button should be vertical (has top or bottom icons)
   const isVertical = !!(topIcon || bottomIcon);
@@ -142,7 +142,9 @@ export default function StylizedButton({
       activeOpacity={0.7}
       style={[
         styles.button,
-        variant === 'primary' ? styles.primaryButton : styles.secondaryButton,
+        variant === 'primary' && styles.primaryButton,
+        variant === 'secondary' && styles.secondaryButton,
+        variant === 'third' && styles.thirdButton,
         sizeStyles.container,
         fullWidth && styles.fullWidth,
         (disabled || loading) && styles.disabled,
@@ -174,7 +176,8 @@ export default function StylizedButton({
             <Text
               style={[
                 styles.text,
-                variant === 'primary' ? styles.primaryText : styles.secondaryText,
+                (variant === 'primary' || variant === 'third') ? styles.primaryText : styles.secondaryText,
+                sizeStyles.text,
                 sizeStyles.text,
                 underline && styles.underlineText,
                 textStyle,
@@ -231,6 +234,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderWidth: 2,
     borderColor: '#131E46',
+  },
+  thirdButton: {
+    backgroundColor: '#0053AA',
   },
   // Sizes
   smallContainer: {

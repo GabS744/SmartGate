@@ -11,6 +11,7 @@ export default {
     regular: 'Barlow_400Regular',
     medium: 'Barlow_500Medium',
     semiBold: 'Barlow_600SemiBold',
+    Bold: 'Barlow_700Bold',
   
     families: {
       openSans: 'Open Sans, system-ui, sans-serif',
