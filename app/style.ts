@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
-import { smartGateLogo } from "@assets";
+import { SmartGateLogo } from "@assets";
 
-export const SmartGateLogo = styled(smartGateLogo)``;
+export const StyledSmartGateLogo = styled(SmartGateLogo)``;
 
 export const Container = styled.View`
   display: flex;
@@ -13,7 +13,7 @@ export const Container = styled.View`
 `;
 
 export const CustomText = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts};
   font-size: 16px;
   color: ${({ theme }) => theme.colors.black};
 `;

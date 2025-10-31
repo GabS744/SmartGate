@@ -33,12 +33,13 @@ interface StylizedButtonProps {
   gap?: number | string;
   disabled?: boolean;
   loading?: boolean;
+  underline?: boolean;
   fullWidth?: boolean;
   style?: ViewStyle;
   textStyle?: TextStyle;
 }
 
-export function StylizedButton({
+export default function StylizedButton({
   text = 'Botão',
   onPress,
   variant = 'primary',
@@ -56,6 +57,7 @@ export function StylizedButton({
   disabled = false,
   loading = false,
   fullWidth = false,
+  underline = false,
   style,
   textStyle,
 }: StylizedButtonProps) {
@@ -174,6 +176,7 @@ export function StylizedButton({
                 styles.text,
                 variant === 'primary' ? styles.primaryText : styles.secondaryText,
                 sizeStyles.text,
+                underline && styles.underlineText,
                 textStyle,
               ]}
             >
@@ -246,17 +249,14 @@ const styles = StyleSheet.create({
   longSmallContainer: {
     paddingVertical: 8,
     paddingHorizontal: 16,
-    width: '100%',
   },
   longMediumContainer: {
     paddingVertical: 12,
     paddingHorizontal: 24,
-    width: '100%',
   },
   longLargeContainer: {
     paddingVertical: 16,
     paddingHorizontal: 32,
-    width: "100%",
   },
   // Text styles
   text: {
@@ -298,8 +298,12 @@ const styles = StyleSheet.create({
   fullWidth: {
     width: '100%',
   },
-});
 
+  underlineText: {
+    textDecorationLine: 'underline',
+  },
+  
+});
 // Examples:
 /*
 import { StylizedButton } from './StylizedButton';
